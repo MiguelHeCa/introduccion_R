@@ -15,6 +15,8 @@ might be ways to make it more elegant._
 
 [![](https://user-images.githubusercontent.com/13643239/56341448-68fe9380-61b5-11e9-816f-5c71ae71b94f.png)](https://course-starter-r.netlify.com)
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiguelHeCa/introduccion_R/binder)
+
 ## ✅ Quickstart
 
 1. [Import](https://github.com/new/import) this repo, install it and make sure
