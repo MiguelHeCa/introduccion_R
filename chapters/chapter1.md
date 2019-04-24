@@ -10,7 +10,7 @@ id: 1
 
 <exercise id="1" title="Introduction" type="slides">
 
-<slides source="chapter1_01_introduction">
+<slides source="chapter1_01_introduccion">
 </slides>
 
 </exercise>
