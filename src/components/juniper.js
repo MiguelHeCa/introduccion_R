@@ -27,8 +27,8 @@ class Juniper extends React.Component {
         storageExpire: 60,
         debug: true,
         msgButton: 'run',
-        msgLoading: 'Loading...',
-        msgError: 'Connecting failed. Please reload and try again.',
+        msgLoading: 'Cargando...',
+        msgError: 'La conexión falló. Por favor recarga e intenta de nuevo.',
         classNames: {
             cell: 'juniper-cell',
             input: 'juniper-input',

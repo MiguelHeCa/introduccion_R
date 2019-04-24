@@ -1,10 +1,9 @@
 ---
-title: 'Chapter 2: More stuff'
+title: 'Capítulo 2: Estructura de datos'
 description:
-  'This chapter will teach you even more stuff and help you learn some new
-  concepts.'
+  'En este capítulo te enseñaremos cómo se presentan los vectores y los datos en general'
 prev: /chapter1
-next: null
+next: /chapter3
 type: chapter
 id: 2
 ---

@@ -84,7 +84,7 @@ class Slides extends React.Component {
                                         <section
                                             key={i}
                                             data-markdown=""
-                                            data-separator-notes="^Notes:"
+                                            data-separator-notes="^Notas:"
                                         >
                                             <textarea data-template defaultValue={markdown} />
                                         </section>
