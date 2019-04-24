@@ -1,8 +1,7 @@
 ---
-title: 'Chapter 1: Getting started'
+title: 'Capítulo 1: Lo básico de R'
 description:
-  'This chapter will teach you about many cool things and introduce you to the
-  most important concepts of the course.'
+  'En este capítulo te daremos una breve reseña de R y te mostraremos los conceptos básicos más importantes que utilizarás al trabajar con datos.'
 prev: null
 next: /chapter2
 type: chapter
@@ -11,7 +10,7 @@ id: 1
 
 <exercise id="1" title="Introduction" type="slides">
 
-<slides source="chapter1_01_introduction">
+<slides source="chapter1_01_introduccion">
 </slides>
 
 </exercise>

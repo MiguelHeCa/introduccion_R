@@ -1,11 +1,11 @@
 {
-    "courseId": "course-starter-r",
-    "title": "My cool online course",
-    "slogan": "A free online course",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat semper urna, in accumsan sapien dui ac mi. Pellentesque felis lorem, semper nec velit nec, consectetur placerat enim.",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat semper urna.",
-    "siteUrl": "https://course-starter-r.netlify.com",
-    "twitter": "spacy_io",
+    "courseId": "introduccion_r",
+    "title": "Curso de introducción a R",
+    "slogan": "Aprende visualización de datos en español",
+    "description": "En este curso aprenderás a utilizar R desde cero. Aquí te mostraremos todo lo que necesitas para poder manipular, descargar, exportar, visualizar y analizar datos.",
+    "bio": "tacos de datos es tu sitio para aprender visualización y ciencia de datos, en tu idioma.",
+    "siteUrl": "https://introduccion-r-tdd.netlify.com",
+    "twitter": "tacosdedatos",
     "fonts": "IBM+Plex+Mono:500|IBM+Plex+Sans:700|Lato:400,400i,700,700i",
     "testTemplate": "success <- function(text) {\n    cat(paste(\"\\033[32m\", text, \"\\033[0m\", sep = \"\"))\n}\n\n.solution <- \"${solutionEscaped}\"\n\n${solution}\n\n${test}\ntryCatch({\n    test()\n}, error = function(e) {\n    cat(paste(\"\\033[31m\", e[1], \"\\033[0m\", sep = \"\"))\n})",
     "juniper": {
@@ -15,11 +15,11 @@
         "kernelType": "ir",
         "debug": false
     },
-    "showProfileImage": true,
+    "showProfileImage": false,
     "footerLinks": [
-        { "text": "Website", "url": "https://spacy.io" },
-        { "text": "Source", "url": "https://github.com/ines/course-starter-r" },
-        { "text": "Built with ♥", "url": "https://github.com/ines/course-starter-r" }
+        { "text": "Sitio web", "url": "https://tacosdedatos.com/" },
+        { "text": "Fuente", "url": "https://github.com/MiguelHeCa/introduccion_R" },
+        { "text": "Hecho con 🌮", "url": "https://github.com/tacos-de-datos" }
     ],
-    "theme": "#de7878"
+    "theme": "#0d68a1"
 }

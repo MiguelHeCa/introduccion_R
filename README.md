@@ -1,19 +1,10 @@
-# Online course starter: R
+# Introducción: R
 
-This is a starter repo based on the
-[course framework](https://github.com/ines/spacy-course) I developed for my
-[spaCy course](https://course.spacy.io). The front-end is powered by
-[Gatsby](http://gatsbyjs.org/) and [Reveal.js](https://revealjs.com) and the
-back-end code execution uses [Binder](https://mybinder.org) 💖
+Esta es un tutorial de introducción en el uso de R dirigido a personas que nunca han programado en cualquier otro lenguaje. Está ubicado en [tacos de datos](https://tacosdedatos.com/) y basado en el repositorio del [courser-starter-r](https://github.com/ines/courser-starter-r) de [ines](https://github.com/ines). Utiliza [Gatsby](http://gatsbyjs.org/) y [Reveal.js](https://revealjs.com) en el _front-end_ y [Binder](https://mybinder.org) en el _back-end_ para ejecutar R sin que tengas que instalar nada.
 
-_This repo could use some better code examples. Also, if you have experience
-with R, feel free to suggest improvements to the
-[test logic and template](#adding-tests). It all works as expected, but there
-might be ways to make it more elegant._
+[comment]: <> ([![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ines/courser-starter-r))
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ines/courser-starter-r)
-
-[![](https://user-images.githubusercontent.com/13643239/56341448-68fe9380-61b5-11e9-816f-5c71ae71b94f.png)](https://course-starter-r.netlify.com)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiguelHeCa/introduccion_R/binder)
 
 ## ✅ Quickstart
 
