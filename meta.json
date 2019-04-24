@@ -1,7 +1,7 @@
 {
     "courseId": "introduccion_r",
     "title": "Curso de introducción a R",
-    "slogan": "Aprende con tacos de datos",
+    "slogan": "Aprende visualización de datos en español",
     "description": "En este curso aprenderás a utilizar R desde cero. Aquí te mostraremos todo lo que necesitas para poder manipular, descargar, exportar, visualizar y analizar datos.",
     "bio": "tacos de datos es tu sitio para aprender visualización y ciencia de datos, en tu idioma.",
     "siteUrl": "https://introduccion-r-tdd.netlify.com",
@@ -19,7 +19,7 @@
     "footerLinks": [
         { "text": "Sitio web", "url": "https://tacosdedatos.com/" },
         { "text": "Fuente", "url": "https://github.com/MiguelHeCa/introduccion_R" },
-        { "text": "Hecho con 🌮", "url": "https://github.com/MiguelHeCa/introduccion_R" }
+        { "text": "Hecho con 🌮", "url": "https://github.com/tacos-de-datos" }
     ],
     "theme": "#141f66"
 }
