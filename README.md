@@ -2,7 +2,7 @@
 
 Esta es un tutorial de introducción en el uso de R dirigido a personas que nunca han programado en cualquier otro lenguaje. Está ubicado en [tacos de datos](https://tacosdedatos.com/) y basado en el repositorio del [courser-starter-r](https://github.com/ines/courser-starter-r) de [ines](https://github.com/ines). Utiliza [Gatsby](http://gatsbyjs.org/) y [Reveal.js](https://revealjs.com) en el _front-end_ y [Binder](https://mybinder.org) en el _back-end_ para ejecutar R sin que tengas que instalar nada.
 
-[comment]: <> ([![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ines/courser-starter-r))
+<!--- [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ines/courser-starter-r) --->
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MiguelHeCa/introduccion_R/binder)
 
