@@ -48,7 +48,7 @@ print("Hola mundo")
 
 Notas: Al utilizar R, tu interfaz se verá algo similar a lo que ves en la presentación. La consola se puede utilizar de dos formas: directamente o a través de un script. En cualquiera de los casos podrás escribir vectores, funciones que la máquina procesará, así como comentarios para que el usuario (tú o alguien más) deba saber la lógica de lo que estás haciendo. Estos comentarios inician con el símbolo `#` solamente "imprimirán" el resultado, sin hacer ninguna otra acción.
 
-En cualquier otro caso, R interpretará cualquier caracter como una instrucción para que ejecute algo. Por ejemplo, la función `print()` mostrará lo que pongamos dentro de esa función. En este caso, le diremos a la computadora que imprima `Hola mundo` en la consola. 
+En cualquier otro caso, R interpretará cualquier caracter como una instrucción para que ejecute algo. Por ejemplo, la función `print()` mostrará lo que pongamos dentro de esa función. En este caso, le diremos a la computadora que imprima `Hola mundo` en la consola.
 
 Esta función no hace mucho, pero R está lleno de otras opciones que lo convierten en una de las opciones más utilizadas en varias ciencias.
 
@@ -141,7 +141,7 @@ objetos <- un_objeto - otro_objeto
 objetos
 ```
 
-Notas: Aunque parezca trivial, nombrar objetos es una cosa muy seria. Puede que en un pequeño script declares una matriz como `matriz1` y luego otra `matriz2` con la confianza de que sepas qué contienen esas matrices, pero conforme pase el tiempo o crezca el proyecto probablemente olvides qué tenía. 
+Notas: Aunque parezca trivial, nombrar objetos es una cosa muy seria. Puede que en un pequeño script declares una matriz como `matriz1` y luego otra `matriz2` con la confianza de que sepas qué contienen esas matrices, pero conforme pase el tiempo o crezca el proyecto probablemente olvides qué tenía.
 
 Tampoco existe una respuesta obvia para designar la mejor forma de nombrar los objetos, pero ante la duda sigamos la regla de que **programaremos para los humanos, no para la computadora**.
 
