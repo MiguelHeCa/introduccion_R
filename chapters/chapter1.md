@@ -8,36 +8,17 @@ type: chapter
 id: 1
 ---
 
-<exercise id="1" title="Introduction" type="slides">
+<exercise id="1" title="Introducción" type="slides">
 
-<slides source="chapter1_01_introduccion">
-</slides>
+  <slides source="cap1_01_introduccion"></slides>
 
 </exercise>
 
-<exercise id="2" title="Getting Started">
+<exercise id="2" title="Tu primer taco">
 
-Let's ask some questions about the slides. Whats the correct answer?
+  Aunque es posible escribir directamente en la consola, es mejor apoyarse con los scripts de R para registrar lo que estemos haciendo.
 
-<choice>
-<opt text="Answer one">
-
-This is not the correct answer.
-
-</opt>
-
-<opt text="Answer two" correct="true">
-
-Good job!
-
-</opt>
-
-<opt text="Answer three">
-
-This is not correct either.
-
-</opt>
-</choice>
+  Tu primera tarea será utilizar todos los operadores en tres operaciones distintas.
 
 </exercise>
 
