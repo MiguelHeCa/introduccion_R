@@ -14,11 +14,26 @@ id: 1
 
 </exercise>
 
-<exercise id="2" title="Tu primer taco">
+<exercise id="2" title="Haciendo cuentas">
 
-  Aunque es posible escribir directamente en la consola, es mejor apoyarse con los scripts de R para registrar lo que estemos haciendo.
+  Imaginemos que invitaste a tus amigos a casa y todos quieren pedir tacos, y ves que es una gran oportunidad para hacer cuentas con R. Deberás hacer lo siguiente:
 
-  Tu primera tarea será utilizar todos los operadores en tres operaciones distintas.
+  1. Tu primera tarea es saber cuántos tacos en total serán. A esta taquería le gusta vender todos los tacos a $5. _Lorena_ quiere 8 de carne asada, _Raúl_ quiere 3 de pastor y 2 de carne asada. _Mariana_ pidió 3 de tripa. _Mario_, al que le dicen el cuadrado, 6 de carne asada. Al final, _tú_ también pides 3 de pastor y 1 de carne asada. Guarda esta cantidad en la variable `orden` y luego imprime la variable en la consola.
+  2. _Lorena_ lo piensa bien y mejor quiere pedir solo 2 tacos de los que originalmente quería. Resta la cantidad que corresponda de la variable `nueva_orden`.
+  3. Mario, el cuadrado, prefiere que quitar los 6 de carne asada que había pedido, solo sean los mismos de Lorena al cuadrado. Calcula esta cantidad y súmala a la nueva orden. Guarda el resultado en la variable `otra_orden`.
+  4. Calcula cuánto será en total multiplicando `otra_orden` por el precio de cada taco y guarda el resultado en la variable `total`.
+  5. Como estos tú y tus otros 4 amigos son muy compartidos, quieren dividir la cuenta en partes iguales, sin importar si uno come más que otro. Guarda el resultado en `cuenta_por_persona`.
+  6. Resulta que te tomas muy en serio el dicho de "cuentas claras, amistadas largas", por lo que enseñas a todos el contenido de las variables que hiciste imprimiéndolas en la consola. Para hacer esto, solo escribe el nombre de cada variable para **imprimir**.
+
+<codeblock id="01_02">
+
+1. ¿Sumaste 8 de carne asada, 3 de pastor, 2 de carne asada, 3 de tripa, 6 de carne asada, 3 de pastor y 1 de carne asada?
+2. ¿Restaste 6 tacos?
+3. ¿Restaste los 6 tacos de Mario y pusiste los 2 de Lorena al cuadrado?
+4. ¿Multiplicaste la otra orden por 5?
+5. Recuerda que son 5 amigos en total.
+
+</codeblock>
 
 </exercise>
 
