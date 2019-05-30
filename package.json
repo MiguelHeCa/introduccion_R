@@ -6,7 +6,7 @@
     "author": "Ines Montani <ines@explosion.ai>",
     "dependencies": {
         "@illinois/react-use-local-storage": "^1.1.0",
-        "@jupyterlab/outputarea": "^0.19.1",
+        "@jupyterlab/outputarea": "^0.19.2",
         "@jupyterlab/rendermime": "^0.19.1",
         "@phosphor/widgets": "^1.6.0",
         "autoprefixer": "^9.4.7",
@@ -30,7 +30,7 @@
         "gatsby-transformer-remark": "^2.2.5",
         "gatsby-transformer-sharp": "^2.1.17",
         "juniper-js": "^0.1.0",
-        "node-sass": "^4.11.0",
+        "node-sass": "^4.12.0",
         "prismjs": "^1.15.0",
         "react": "^16.8.2",
         "react-dom": "^16.8.2",
