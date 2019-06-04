@@ -1,11 +1,11 @@
-# Suma todos los tacos
-orden <- _ + _ + _ + _ + _ + _ + _
+# Suma todos los tacos que tus amigos y tú quieren pedir
+orden <- __ + __ + __ + __ + __
 
 # Quita los tacos que Lorena ya no quiere
-nueva_orden <- orden - ___
+nueva_orden <- __ - __
 
 # Pon la nueva cantidad que Mario quiere
-otra_orden <- nueva_orden - ___ + ___
+orden_final <- ___ - __ + (__)
 
 # Multiplica la cantidad de la otra_orden por el precio de cada taco
 total <- ___
@@ -13,9 +13,5 @@ total <- ___
 # Divide la cuenta_por_persona entre todos
 ___ <- ___
 
-# Imprime el total por persona
-orden
-nueva_orden
-otra_orden
-total
-cuenta_por_persona
+# Imprime la cuenta por persona
+___
