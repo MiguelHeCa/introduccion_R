@@ -63,9 +63,9 @@ class CodeBlock extends React.Component {
     render() {
         const { Juniper, showSolution } = this.state
         const { id, source, solution, test, children } = this.props
-        const sourceId = source || `exc_${id}`
-        const solutionId = solution || `solution_${id}`
-        const testId = test || `test_${id}`
+        const sourceId = source || `ejr_${id}`
+        const solutionId = solution || `sln_${id}`
+        const testId = test || `pba_${id}`
         const juniperClassNames = {
             cell: classes.cell,
             input: classes.input,
