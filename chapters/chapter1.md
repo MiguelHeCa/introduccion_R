@@ -39,7 +39,12 @@ id: 1
 </exercise>
 
 <exercise id="3" title="Variables">
+
   Funcionar como calculadora no es suficiente. La mayor parte del tiempo necesitarás guardar números, variables, textos, fórmulas e incluso funciones para poder hacer análisis sofisticados con R. Para ello necesitarás **declarar** un `objeto` _que tenga_ un `valor` **asignado** utilizando el símbolo `<-`, escrito de la siguiente manera:
+
+  ```r
+  objeto <- valor
+  ```
 
   ```r
   # Guardados en memoria
@@ -55,10 +60,6 @@ id: 1
 
   ```out
   [1] -3
-  ```
-
-  ```r
-  objeto <- valor
   ```
 
   El símbolo `<-` es el más utilizado para declarar todos los objetos en R. Por ahora no entraremos a detalles, pero es necesario aclarar que otro símbolo de asignación es `=`, el cual también hace lo mismo que `<-` aunque en un enfoque local (no te preocupes si no sabes todavía a qué nos referimos, lo veremos más adelante). Las convenciones de R los distinguen de la siguiente forma:
@@ -80,11 +81,13 @@ id: 1
   6. Imprime la cuenta por persona simplemente escribiendo la variable.
 
   <codeblock id="01_03">
+
     1. ¿Sumaste 6, 2, 3, 11 y 4?
     2. ¿Restaste 4 tacos de la nueva orden?
     3. ¿Restaste los 11 tacos de Mario y pusiste los 2 de Lorena al cuadrado?
     4. ¿Multiplicaste la orden final por 5?
     5. Recuerda que son 5 amigos en total.
+    
   </codeblock>
 </exercise>
 
