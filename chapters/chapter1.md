@@ -34,6 +34,12 @@ id: 1
   Finalmente, calcula el residuo de 12 entre 8.
 
   <codeblock id="01_02">
+  
+  - ¿Pusiste (-1) - 2 + 5?
+  - Para multiplicaciones se pone `*`
+  - Para dividir escribe `/`
+  - Para potencias y exponentes se utiliza `^`
+  - En los residuos se usa `%%`
 
   </codeblock>
 </exercise>
@@ -92,41 +98,72 @@ id: 1
 </exercise>
 
 <exercise id="4" title="Tipos de datos básicos">
-  <codeblock id="">
+
+  Nota que en el ejercicio anterior utilizamos solamente números para crear objetos, lo cual es bastante útil para realizar diversos cálculos. Además de esto, también podemos guardar cadenas de caracteres (_strings_), enteros (_integers_), dobles (_doubles_), lógicos (_logicals_) y otro tipo de datos que se les identificará a través de su **clase**. 
+
+  Para conocer la clase hay que invocar una **función** llamada `class()`. Esta función nos dirá con qué _clase_ de objeto estamos tratando. Por ahora nos enfocaremos a explicar las 8 clases más frecuentes con las que te enfrentarás la mayor parte del tiempo al trabajar con R. 
+  
+  Las funciones en este capítulo no son relevantes, así que no deberás preocuparte mucho por ellas (aún).
+
+  Por último, solo da click en `Ejecutar Código`para ver la demostración de las clases de cada objeto.
+
+  <codeblock id="01_04">
+
+  No modificaste el código, ¿verdad?
+
   </codeblock>
+  
 </exercise>
 
 <exercise id="5" title="Numéricos">
+
+
+
+  <codeblock id="">
+
+
+  
+  </codeblock>
+</exercise>
+
+
+<exercise id="6" title="Cadena de caracteres">
+
+
+
+  <codeblock id="">
+
+
+
+  </codeblock>
+</exercise>
+
+<exercise id="7" title="Factores">
   <codeblock id="">
   </codeblock>
 </exercise>
 
-<exercise id="6" title="Caracteres">
+<exercise id="8" title="Lógicos">
   <codeblock id="">
   </codeblock>
 </exercise>
 
-<exercise id="7" title="Lógicos">
+<exercise id="9" title="Fechas">
   <codeblock id="">
   </codeblock>
 </exercise>
 
-<exercise id="8" title="Fechas">
+<exercise id="10" title="Reservados">
   <codeblock id="">
   </codeblock>
 </exercise>
 
-<exercise id="9" title="Reservados">
+<exercise id="11" title="Operadores lógicos">
   <codeblock id="">
   </codeblock>
 </exercise>
 
-<exercise id="10" title="Operadores lógicos">
-  <codeblock id="">
-  </codeblock>
-</exercise>
-
-<exercise id="11" title="Recomendaciones" type="slides">
+<exercise id="12" title="Recomendaciones" type="slides">
 
   <slides source="cap1_11_recomendaciones"></slides>
 
