@@ -112,7 +112,7 @@ id: 1
   No modificaste el código, ¿verdad?
 
   </codeblock>
-  
+
 </exercise>
 
 <exercise id="5" title="Numéricos">
@@ -153,12 +153,12 @@ id: 1
   </codeblock>
 </exercise>
 
-<exercise id="10" title="Reservados">
+<exercise id="10" title="Operadores lógicos">
   <codeblock id="">
   </codeblock>
 </exercise>
 
-<exercise id="11" title="Operadores lógicos">
+<exercise id="11" title="Nombres reservados">
   <codeblock id="">
   </codeblock>
 </exercise>
