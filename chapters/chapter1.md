@@ -97,7 +97,7 @@ id: 1
   </codeblock>
 </exercise>
 
-<exercise id="4" title="Tipos de datos básicos">
+<exercise id="4" title="Clases y tipos de datos">
 
   La unidad básica de datos en R se llama **vector**. Los vectores tienen **clases** (atributos relacionados con funciones y programación orientada a objetos) y **tipos** (la forma en que R identifica el dato). Nota que en el ejercicio anterior utilizamos solamente números para crear objetos, lo cual es bastante útil para realizar diversos cálculos. Además de esto, también podemos guardar cadenas de caracteres (_strings_), numéricos (_numerics_), lógicos (_logicals_) y muchos otros tipos de datos que se les identificará a través de su **clase** y su **tipo**. 
 
