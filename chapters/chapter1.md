@@ -99,11 +99,11 @@ id: 1
 
 <exercise id="4" title="Tipos de datos básicos">
 
-  Nota que en el ejercicio anterior utilizamos solamente números para crear objetos, lo cual es bastante útil para realizar diversos cálculos. Además de esto, también podemos guardar cadenas de caracteres (_strings_), enteros (_integers_), dobles (_doubles_), lógicos (_logicals_) y otro tipo de datos que se les identificará a través de su **clase**. 
+  La unidad básica de datos en R se llama **vector**. Los vectores tienen **clases** (atributos relacionados con funciones y programación orientada a objetos) y **tipos** (la forma en que R identifica el dato). Nota que en el ejercicio anterior utilizamos solamente números para crear objetos, lo cual es bastante útil para realizar diversos cálculos. Además de esto, también podemos guardar cadenas de caracteres (_strings_), numéricos (_numerics_), lógicos (_logicals_) y muchos otros tipos de datos que se les identificará a través de su **clase** y su **tipo**. 
 
-  Para conocer la clase hay que invocar una **función** llamada `class()`. Esta función nos dirá con qué _clase_ de objeto estamos tratando. Por ahora nos enfocaremos a explicar las 8 clases más frecuentes con las que te enfrentarás la mayor parte del tiempo al trabajar con R. 
+  Para conocer la clase hay que invocar una **función** llamada `class()`. Esta función nos dirá con qué _clase_ de objeto estamos tratando. Por su parte, la función `typeof()` nos dice cómo R almacena en la memoria de la computadora. Por ahora nos enfocaremos a explicar las clases y los tipos más frecuentes con las que te trabajarás la mayor parte del tiempo con R.
   
-  Las funciones en este capítulo no son relevantes, así que no deberás preocuparte mucho por ellas (aún).
+  Cabe aclarar que el funcionamiento de las funciones va más allá del propósito de este capítulo, así que no deberás preocuparte mucho por ellas porque las abordaremos en el capítulo 2.
 
   Por último, solo da click en `Ejecutar Código`para ver la demostración de las clases de cada objeto.
 
@@ -117,6 +117,10 @@ id: 1
 
 <exercise id="5" title="Numéricos">
 
+  En R `base`, se les suele llamar _numéricos_ a dos tipos de datos: 
+  
+  1. `numeric`, que normalmente se identifican con números con decimales (0.135), notación científica (1e6) y notación hexadecimal (0xabc). También incluyen tres tipos especiales de numéricos: los infinitos (`Inf` y `-Inf`) e, irónicamente, el _no es un número_ `NaN` - del inglés _Not a number_.
+  2. `integer`, al que pertenece 
 
 
   <codeblock id="">
@@ -158,13 +162,41 @@ id: 1
   </codeblock>
 </exercise>
 
-<exercise id="11" title="Nombres reservados">
+<exercise id="12" title="Valores faltantes">
+
+
+
   <codeblock id="">
+
+
+
   </codeblock>
 </exercise>
 
-<exercise id="12" title="Recomendaciones" type="slides">
+<exercise id="12" title="Coerciones">
 
-  <slides source="cap1_11_recomendaciones"></slides>
+
+
+  <codeblock id="">
+
+
+
+  </codeblock>
+</exercise>
+
+<exercise id="13" title="Nombres reservados">
+
+
+
+  <codeblock id="">
+
+
+
+  </codeblock>
+</exercise>
+
+<exercise id="14" title="Recomendaciones" type="slides">
+
+  <slides source="cap1_14_recomendaciones"></slides>
 
 </exercise>
