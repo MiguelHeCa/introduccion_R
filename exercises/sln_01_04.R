@@ -7,5 +7,5 @@ clases_esenciales <- list("Numéricos" = 42,
 
 lapply(clases_esenciales, 
        function(x) {
-         paste0(x, " es clase ", class(x))
+         paste0(x, " es clase ", class(x), " y tipo ", typeof(x))
          })
