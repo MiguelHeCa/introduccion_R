@@ -2,14 +2,17 @@
 # minúsculas (LETTERS y letters), los nombres y de los meses con sus 
 # abreviaturas (month.name y month.abb) y nuestra variable que nos interesa en
 # este ejercicio: pi. Conozcamos su clase y tipo
-class(pi)
-typeof(pi)
+constante_pi <- pi
+class(constante_pi)
+typeof(constante_pi)
 
 # Queremos saber la clase y tipo de tres milésimas en notación científica
-class(3e-3)
-typeof(3e-3)
+milesima <- 3e-3
+class(milesima)
+typeof(milesima)
 
 # Finalmente, escribe tu año de nacimiento como entero y verifícalo con su
 # clase y tipo.
-class(1970L)
-typeof(1970L)
+nacimiento <- 1970L
+class(nacimiento)
+typeof(nacimiento)
