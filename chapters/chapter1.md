@@ -121,7 +121,7 @@ id: 1
 
   En R `base`, el vector de **numérico** es el primero que vemos de los **vectores atómicos**. Tiene clase `numeric` y es tipo `double`. Normalmente se identifica con números con decimales (0.135), notación científica (1e6) y notación hexadecimal (0xabc). También incluye tres tipos especiales de numéricos: los infinitos (`Inf` y `-Inf`) e, irónicamente, el _no es un número_ `NaN` - del inglés _Not a Number_.
 
-  También existe el vector `integer` (entero), el cual requiere menos memoria que el `numeric`. Tanto su clase como tipo son `integer`. Se caracteriza por no llevar decimales. Pero hay que considerar dos cosas acerca de los enteros: se leen y escriben de forma distinta. Si escribes `30`, R automáticamente cataloga ese dato como `numeric`, independientemente de tener decimales o no. Para indicar a la computadora que se trata de un entero, como una ID o un año en particular, habrá que ponerle el sufijo `L`. De esta forma, las funciones `class(30L)`y `typeof(30L)` te dirán que se trata de un `integer`. Por otra parte, cuando se trata de vectores largos que **no** tienen números de decimales, algunos paquetes de R los pueden convertir a enteros por defecto. Estos detalles los veremos más a profundidad cuando veamos cómo manipular e importar _data frames_.
+  También existe el vector `integer` (entero), el cual requiere menos memoria que el `numeric`. Tanto su clase como tipo son `integer`. Se caracteriza por no llevar decimales y para es necesario especificar que se trata de un entero. Si escribes `42`, R automáticamente cataloga ese dato como `numeric`, independientemente de tener decimales o no. Para indicar a la computadora que se trata de un entero, como una ID o un año en particular, habrá que ponerle el sufijo `L`. De esta forma, las funciones `class(3e4L)`y `typeof(5L)` te dirán que se trata de un `integer`. Por otra parte, cuando se trata de vectores largos que **no** tienen números con decimales, algunos paquetes de R los pueden convertir a enteros por defecto aunque no tengan la `L`. Estos detalles los veremos más a profundidad cuando veamos cómo manipular e importar _data frames_.
 
   Para practicar estos conceptos, obtén el tipo y clase de `pi`, tres milésimas en notación científica y tu año de nacimiento como entero.
 
@@ -137,11 +137,24 @@ id: 1
 
 <exercise id="6" title="Cadena de caracteres">
 
+Las cadenas de caracteres o `string character` son usadas para letras, frases y cualquier forma de texto. Esto incluye números, funciones, y todos los demás
+tipos de datos. Son de clase y tipo `character`. Para escribirlas se usan comillas dobles `"` o comillas simples `'`, sin ningún orden en particular. Por ejemplo:
 
+- Al escribir `variable` en la consola, R buscará un objeto con ese nombre. Pero si escribes `"variable"` o `'variable'`, solo imprimirás la cadena con ese nombre. Nota que R imprime los vectores con comillas dobles, aunque esto no afecta al objeto en sí.
+
+En los vectores `character` prácticamente puedes meter lo que sea, desde nombres de categorías hasta libros enteros.
+
+También puedes usar comillas simples dentro de las comillas dobles y viceversa. Por ejemplo, si en una función queremos avisar de un error cuando no contenga la variable `x` podemos escribir `"Error: recuerda incluir la variable 'x'."`.
+
+En algunos casos también identifica estos vectores con acentos graves `` ` ``. Esto suele suceder en nombres de columnas que contienen espacios, son números o están dentro de fórmulas.
+
+Estos vectores tienen sus complejidades, como la inclusión de caracteres especiales y expresiones regulares (_regular expressions_), que requerirían su propio curso (no por nada existe la rama de _procesamiento de texto_). Dominar este tipo de vector es fascinante pero muy demandante. Por ahora quedémonos con lo necesario.
+
+Para probar este nuevo conocimiento, escribe la ciudad donde naciste y convierte las 3 milésimas del ejercicio anterior en `character`. Comprueba sus clases y sus tipos.
 
   <codeblock id="">
 
-
+  ¿Escribiste tu respuesta entre comillas y escribiste las funciones de clase y tipo?
 
   </codeblock>
 </exercise>
