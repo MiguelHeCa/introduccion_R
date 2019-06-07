@@ -125,7 +125,7 @@ id: 1
 
   Para practicar estos conceptos, obtén el tipo y clase de `pi`, tres milésimas en notación científica y tu año de nacimiento como entero.
 
-  <codeblock id="">
+  <codeblock id="01_05">
 
   1. ¿Escribiste `pi`?
   2. ¿Pusiste el número, luego la letra `e` y finalmente un signo negativo seguido de la unidad deseada?
@@ -152,7 +152,7 @@ Estos vectores tienen sus complejidades, como la inclusión de caracteres especi
 
 Para probar este nuevo conocimiento, escribe la ciudad donde naciste y convierte las 3 milésimas del ejercicio anterior en `character`. Comprueba sus clases y sus tipos.
 
-  <codeblock id="">
+  <codeblock id="01_06">
 
   ¿Escribiste tu respuesta entre comillas y escribiste las funciones de clase y tipo?
 
