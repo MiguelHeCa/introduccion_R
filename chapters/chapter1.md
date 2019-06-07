@@ -99,11 +99,13 @@ id: 1
 
 <exercise id="4" title="Clases y tipos de datos">
 
-  La unidad básica de datos en R se llama **vector**. Los vectores tienen **clases** (atributos relacionados con funciones y programación orientada a objetos) y **tipos** (la forma en que R identifica el dato). Nota que en el ejercicio anterior utilizamos solamente números para crear objetos, lo cual es bastante útil para realizar diversos cálculos. Además de esto, también podemos guardar cadenas de caracteres (_strings_), numéricos (_numerics_), lógicos (_logicals_) y muchos otros tipos de datos que se les identificará a través de su **clase** y su **tipo**. 
+  Conocer con qué clase y tipo de datos contamos es esencial para poder extraer información relevante de nuestra área de interés, sobre todo a la hora de hacer reportes, gráficas o modelos.
+  
+  La unidad básica de datos en R se llama **vector**. Los vectores tienen **clases** (atributos relacionados con funciones y programación orientada a objetos) y **tipos** (la forma en que R identifica el dato). Nota que en el ejercicio anterior utilizamos solamente números para crear objetos, lo cual es bastante útil para realizar diversos cálculos. Además de esto, también podemos guardar cadenas de caracteres (`strings`), numéricos (`numerics`), lógicos (`logicals`) (llamados también **vectores atómicos**) y muchos otros tipos de datos que se les identificará a través de su **clase** y su **tipo**. 
 
   Para conocer la clase hay que invocar una **función** llamada `class()`. Esta función nos dirá con qué _clase_ de objeto estamos tratando. Por su parte, la función `typeof()` nos dice cómo R almacena en la memoria de la computadora. Por ahora nos enfocaremos a explicar las clases y los tipos más frecuentes con las que te trabajarás la mayor parte del tiempo con R.
   
-  Cabe aclarar que el funcionamiento de las funciones va más allá del propósito de este capítulo, así que no deberás preocuparte mucho por ellas porque las abordaremos en el capítulo 2.
+  Es necesario aclarar que el funcionamiento de las funciones va más allá del propósito de este capítulo, así que no deberás preocuparte mucho por ellas porque las abordaremos en el capítulo 2.
 
   Por último, solo da click en `Ejecutar Código`para ver la demostración de las clases de cada objeto.
 
@@ -117,15 +119,17 @@ id: 1
 
 <exercise id="5" title="Numéricos">
 
-  En R `base`, se les suele llamar _numéricos_ a dos tipos de datos: 
-  
-  1. `numeric`, que normalmente se identifican con números con decimales (0.135), notación científica (1e6) y notación hexadecimal (0xabc). También incluyen tres tipos especiales de numéricos: los infinitos (`Inf` y `-Inf`) e, irónicamente, el _no es un número_ `NaN` - del inglés _Not a number_.
-  2. `integer`, al que pertenece 
+  En R `base`, el vector de **numérico** es el primero que vemos de los **vectores atómicos**. Tiene clase `numeric` y es tipo `double`. Normalmente se identifica con números con decimales (0.135), notación científica (1e6) y notación hexadecimal (0xabc). También incluye tres tipos especiales de numéricos: los infinitos (`Inf` y `-Inf`) e, irónicamente, el _no es un número_ `NaN` - del inglés _Not a Number_.
 
+  También existe el vector `integer` (entero), el cual requiere menos memoria que el `numeric`. Tanto su clase como tipo son `integer`. Se caracteriza por no llevar decimales. Pero hay que considerar dos cosas acerca de los enteros: se leen y escriben de forma distinta. Si escribes `30`, R automáticamente cataloga ese dato como `numeric`, independientemente de tener decimales o no. Para indicar a la computadora que se trata de un entero, como una ID o un año en particular, habrá que ponerle el sufijo `L`. De esta forma, las funciones `class(30L)`y `typeof(30L)` te dirán que se trata de un `integer`. Por otra parte, cuando se trata de vectores largos que **no** tienen números de decimales, algunos paquetes de R los pueden convertir a enteros por defecto. Estos detalles los veremos más a profundidad cuando veamos cómo manipular e importar _data frames_.
+
+  Para practicar estos conceptos, obtén el tipo y clase de `pi`, tres milésimas en notación científica y tu año de nacimiento como entero.
 
   <codeblock id="">
 
-
+  1. ¿Escribiste `pi`?
+  2. ¿Pusiste el número, luego la letra `e` y finalmente un signo negativo seguido de la unidad deseada?
+  3. ¿Agregaste la letra `L` al final del año?
   
   </codeblock>
 </exercise>
