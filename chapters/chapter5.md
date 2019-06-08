@@ -10,68 +10,68 @@ id: 5
 
 <exercise id="1" title="Una pizca de visualización de datos">
 
-  <slides source="cap5_01"></slides>
+<slides source="cap5_01"></slides>
 
 </exercise>
 
 <exercise id="2" title="plot">
 
-  Uso de plot de base R
+Uso de plot de base R
 
-  <codeblock id="05_02">
+<codeblock id="05_02">
 
 
 
-  </codeblock>
+</codeblock>
 </exercise>
 
 <exercise id="3" title="ggplot2">
 
-  estética
+estética
 
-  <codeblock id="05_03">
+<codeblock id="05_03">
 
 
 
-  </codeblock>
+</codeblock>
 </exercise>
 
 <exercise id="4" title="Puntos">
 
-  <codeblock id="05_04">
+<codeblock id="05_04">
 
 
 
-  </codeblock>
+</codeblock>
 </exercise>
 
 <exercise id="5" title="Barras">
 
-  <codeblock id="05_05">
+<codeblock id="05_05">
 
 
 
-  </codeblock>
+</codeblock>
 </exercise>
 
 <exercise id="6" title="Líneas">
 
 
-  <codeblock id="05_06">
+<codeblock id="05_06">
 
 
 
-  </codeblock>
+</codeblock>
 </exercise>
 
 <exercise id="7" title="Más allá de Tidyverse">
 
-  <slides source="cap5_07"></slides>
+<slides source="cap5_07"></slides>
 
 </exercise>
 
 <exercise id="8" title="Comentarios finales">
 
-  <slides source="cap5_08"></slides>
+<slides source="cap5_08"></slides>
 
 </exercise>
