@@ -276,7 +276,7 @@ Incorrecto. Esta opción solo te regresará valores faltantes porque los valores
 
 <exercise id="13" title="Nombres reservados">
 
-  Hasta ahora vimos que podemos crear toda clase de objetos con cualquier nombre, clase y tipo. No obstante, existen **palabras reservadas** en las que no se pueden modificar. Estas son:
+  Hasta ahora vimos que podemos crear toda clase de objetos con cualquier nombre, clase y tipo. No obstante, existen **palabras reservadas** que no se pueden modificar. Estas son:
 
   ```r
   # Constantes
@@ -286,6 +286,8 @@ Incorrecto. Esta opción solo te regresará valores faltantes porque los valores
   if, else, repeat, while, function, for, in, next, break
 
   ```
+
+  De esta forma se evita que el código se convierta en un caos si en algún momento se llegara a cambiar la naturaleza de una constante o una función.
 
   Veamos qué hace R cuando intentas crear un objeto `NA` que contenga `No aplica`. Debería arrojarte un error indicándote que es inválido lo que escribiste:
 
