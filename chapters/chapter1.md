@@ -137,8 +137,7 @@ id: 1
 
 <exercise id="6" title="Cadena de caracteres">
 
-Las cadenas de caracteres o `string character` son usadas para letras, frases y cualquier forma de texto. Esto incluye números, funciones, y todos los demás
-tipos de datos. Son de clase y tipo `character`. Para escribirlas se usan comillas dobles `"` o comillas simples `'`, sin ningún orden en particular. Por ejemplo:
+El tercer **vector atómico** es la cadena de caracteres o `string character` en donde se usa cualquier forma de texto. Son de clase y tipo `character`. Para escribirlas se usan comillas dobles `"` o comillas simples `'`, sin ningún orden en particular. Por ejemplo:
 
 - Al escribir `variable` en la consola, R buscará un objeto con ese nombre. Pero si escribes `"variable"` o `'variable'`, solo imprimirás la cadena con ese nombre. Nota que R imprime los vectores con comillas dobles, aunque esto no afecta al objeto en sí.
 
@@ -148,7 +147,7 @@ También puedes usar comillas simples dentro de las comillas dobles y viceversa.
 
 En algunos casos también identifica estos vectores con acentos graves `` ` ``. Esto suele suceder en nombres de columnas que contienen espacios, son números o están dentro de fórmulas.
 
-Estos vectores tienen sus complejidades, como la inclusión de caracteres especiales y expresiones regulares (_regular expressions_), que requerirían su propio curso (no por nada existe la rama de _procesamiento de texto_). Dominar este tipo de vector es fascinante pero muy demandante. Por ahora quedémonos con lo necesario.
+Estos vectores tienen sus complejidades, como la inclusión de caracteres especiales (`\`) y expresiones regulares (_regular expressions_ o _regex_), que requerirían su propio curso (no por nada existe la rama de _procesamiento de texto_). Dominar este tipo de vector es fascinante pero muy demandante. Por ahora quedémonos con lo necesario.
 
 Para probar este nuevo conocimiento, escribe la ciudad donde naciste y convierte las 3 milésimas del ejercicio anterior en `character`. Comprueba sus clases y sus tipos.
 
@@ -159,14 +158,88 @@ Para probar este nuevo conocimiento, escribe la ciudad donde naciste y convierte
   </codeblock>
 </exercise>
 
-<exercise id="7" title="Factores">
-  <codeblock id="">
+<exercise id="7" title="Lógicos">
+
+  El cuarto **vector atómico** pertenece al de clase y tipo `logical`. Estos son específicamente las constantes verdadero `TRUE`y falso `FALSE`. Solo escriben con mayúsculas o con la inicial `T` y `F`. 
+
+  Su uso es esencial para toda clase de funciones, clasificaciones y modelos. Como es normal en lenguajes de programación, estos vectores pueden _forzarse_ para convertirse en 0 para `FALSE` y 1 para `TRUE`. Esto significa que los `logical` se comportan como `integer`:
+
+  ```
+  > TRUE + TRUE + FALSE + TRUE
+  [1] 3
+  ```
+
+  Al realizar pruebas y bucles, los `logical` serán los que determinen el comportamiento de determinada tarea.
+
+  Comprueba la clase de `F`y luego comprueba la clase y tipo de `TRUE * FALSE`:
+
+  <codeblock id="01_07">
+
+  ¿Guardaste `TRUE * FALSE` en el objeto `logical`?
+
   </codeblock>
 </exercise>
 
-<exercise id="8" title="Lógicos">
-  <codeblock id="">
-  </codeblock>
+<exercise id="8" title="Factores">
+
+  Los factores son un tipo de dato particular de R en el que combina cadenas de caracteres con enteros para trabajar con categorías. Es especialmente útil en encuestas o cualquier posible valor categórico en un orden específico. Su clase es `factor` pero su tipo es `integer`. Esto se debe a que el factor además de valores, contiene niveles (los cuales R siempre los guarda en forma de enteros) que dirán cuál es el orden de los valores o factores.
+
+  Veamos el siguiente ejemplo:
+
+  ```
+  ># Cadena de caracteres
+  > c("Bueno", "Maol", "Regular")
+  [1] "Bueno"   "Maol"    "Regular"
+
+  ># Factores
+  > factor(c("Maol", "Bueno", "Regular"), levels = c("Malo", "Regular", "Bueno"))
+  [1] <NA>    Bueno   Regular
+  Levels: Malo Regular Bueno
+  ```
+
+  En la cadena de caracteres es muy fácil que ocurran las erratas. En este ejemplo de 3 opciones es fácil verlo, pero en datos con millones de observaciones sería un poquito más difícil detectar errores sutiles. En el caso de los factores, los niveles son lo que dicta bajo qué categoría caerán los valores y en caso de que ninguno de los valores corresponda a estos niveles, R simplemente lo marcará como un valor faltante `NA`.
+
+  Veamos este otro ejemplo:
+
+  ```
+  ># Cadena de caracteres
+  > sort(c("Uno", "Dos", "Tres"))
+  [1] "Dos"  "Tres" "Uno" 
+
+  ># Factores
+  > sort(factor(c("Tres", "Dos", "Uno"), levels = c("Uno", "Dos", "Tres")))
+  [1] Uno  Dos  Tres
+  Levels: Uno Dos Tres
+  ```
+
+  Sabemos que después del uno sigue el dos y luego el tres. Si ordenamos una cadena de caracteres, R automáticamente lo hace por orden alfabético, lo cual es incorrecto para nosotros. En cambio, al ordenar los factores, R recurrirá a los niveles como referencia para saber cómo ordenar los valores y así obtenemos el resultado que deseamos.
+
+  Existe una desventaja con respecto a los factores: requieren más memoria y en ocasiones pueden complicar algunas labores, particularmente las que involucran procesamiento de texto. Al importar datos con R `base`, cualquier texto será importado como `factor`, independientemente de su longitud y estos son convertidos a su vez en niveles. Regresando al primer ejemplo, `"Maol" y "Malo"` serían niveles contenidos en el vector y no queremos eso. Otro caso donde resulta mejor no utilizar factores es con categorías sin un orden en particular, por ejemplo el sexo o el nombre de colores.
+
+  Ahora veamos si los factores quedaron suficientemente claros. 
+  
+  Tenemos un vector con los siguientes meses `"Abril", "Septiembre", "Enero", "Julio"` y sabemos que los niveles están en el orden que todos conocemos de los meses. ¿Cuál código sería el correcto si queremos que aparezcan ordenados?
+
+<choice>
+<opt text='sort(c("Abril", "Septiembre", "Enero", "Julio"), levels = c("Enero", "Abril", "Julio", "Septiembre"))'>
+
+Esta no es la correcta porque estás ordenando cadena de caracteres (nota que no está `factor`). La consola te arrojará un error diciéndote que el argumento `levels` no fue utilizado.
+
+</opt>
+
+<opt text='sort(factor(c("Abril", "Septiembre", "Enero", "Julio"), levels = c("Enero", "Abril", "Julio", "Septiembre")))' correct="true">
+
+¡Buen trabajo! Aquí tienes tu primera aproximación con vectores largos, en donde es obligatorio usar `c()` siempre. Esto lo exploraremos a detalle en el capítulo 2.
+
+</opt>
+
+<opt text='sort(factor(c("Abril", "Septiembre", "Enero", "Julio"), levels = c("Ene", "Abr", "Jul", "Sep")))'>
+
+Incorrecto. Esta opción solo te regresará valores faltantes porque los valores no corresponden con los niveles.
+
+</opt>
+</choice>
+ 
 </exercise>
 
 <exercise id="9" title="Fechas">
@@ -179,7 +252,7 @@ Para probar este nuevo conocimiento, escribe la ciudad donde naciste y convierte
   </codeblock>
 </exercise>
 
-<exercise id="12" title="Valores faltantes">
+<exercise id="11" title="Valores faltantes">
 
 
 
