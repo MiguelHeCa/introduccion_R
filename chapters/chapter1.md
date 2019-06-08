@@ -276,11 +276,22 @@ Incorrecto. Esta opción solo te regresará valores faltantes porque los valores
 
 <exercise id="13" title="Nombres reservados">
 
+  Hasta ahora vimos que podemos crear toda clase de objetos con cualquier nombre, clase y tipo. No obstante, existen **palabras reservadas** en las que no se pueden modificar. Estas son:
 
+  ```r
+  # Constantes
+  TRUE, FALSE, NULL, Inf, NaN, NA, NA_integer_, NA_real_, NA_complex_, NA_character_,
 
-  <codeblock id="">
+  # Funciones
+  if, else, repeat, while, function, for, in, next, break
 
+  ```
 
+  Veamos qué hace R cuando intentas crear un objeto `NA` que contenga `No aplica`. Debería arrojarte un error indicándote que es inválido lo que escribiste:
+
+  <codeblock id="01_13">
+
+  ¿Escribiste correctamente `NA`?
 
   </codeblock>
 </exercise>
