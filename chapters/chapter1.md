@@ -242,9 +242,78 @@ Incorrecto. Esta opción solo te regresará valores faltantes porque los valores
  
 </exercise>
 
-<exercise id="9" title="Fechas">
-  <codeblock id="">
-  </codeblock>
+<exercise id="9" title="Fecha y hora">
+
+  Aunque en todo momento usamos fechas y horas, trabajar con ellas puede ser sorprendentemente complicado y normalmente querrás trabajar con paquetes como `lubridate`. Primero empecemos desde la convención para escribir fechas. 
+  
+  Seguramente habrás notado que existen formas muy distintas de expresar una fecha. En Estados Unidos se suele poner **Mes día, año**, mientras que en América Latina y gran parte del mundo se escribe **día-mes-año**. Es más, algunas veces encuentras fechas con nombres completos, otros con números y otros con abreviaturas. En datos de la vida real este desorden puede encontrarse hasta en un solo archivo. Afortunadamente, la norma [https://es.wikipedia.org/wiki/ISO_8601](ISO 8601) se estableció para evitar este tipo de problemas. La lógica es que la notación identifique los elementos de mayor a menor: `[AAAA]-[MM]-[DD]` para fechas, `hh:mm:ss.ssss` para tiempo y `Z` para la zona horaria. Esta es la norma que los lenguajes de programación utilizan, por lo que las fechas y el tiempo tendrán este formato.
+
+  Ahora, para vectores que contienen solo fechas existe la clase `Date`. Esta clase está construida sobre datos dobles, es decir, de tipo `double`. Además, de la misma forma que los factores, hay que crearlos explícitamente.
+
+  Por ejemplo:
+  ```r
+  > Sys.Date()
+  [1] "2019-06-08"
+  > class(Sys.Date())
+  [1] "Date"
+  > typeof(Sys.Date())
+  [1] "double"
+  ```
+  En este caso, la función `Sys.Date()` extrae la fecha del sistema en forma de `double` y lo convierte en clase `Date`.
+
+  Por otra parte, para fechas y tiempo existe una clase especial que se llama `POSIXct`. La primera parte, `POSIX`, es el acrónimo de _Interfaz de Sistemas Operativos Portátil_ en inglés (si te parece que es un nombre rarísimo, bienvenido al mundo de la programación). El sufijo `ct` corresponde al _tiempo de calendario_ en inglés. Al igual que los objetos `Date`, este está construido sobre dobles cuyos valores corresponden a los segundos transcurridos desde el primero de enero de 1970. Esto significa que todas las fechas anterior a 1970 tendrán un `double` negativo.
+
+  También existe la clase `POSIXlt`, cuyo sufijo `lt` corresponde a _tiempo local_ en inglés, pero es un poco más complicado de usar y no necesitamos ver eso por ahora. Por lo pronto veamos cómo se construye un objeto `POSIXct` y comprobemos su clase y tipo:
+
+  ```r
+  > ahora <- Sys.time()
+  > ahora
+  [1] "2019-06-08 12:01:54 CDT"
+
+  > class(ahora)
+  [1] "POSIXct" "POSIXt" 
+
+  > typeof(ahora)
+  [1] "double"
+
+  > unclass(ahora)
+  [1] 1560013315
+  ```
+  La función `unclass()` muestra el número `double` que le corresponde al objeto `ahora`. Lo que significa que han pasado más de mil millones de segundos desde 1970.
+
+  Nota que existen otras formas de presentar fechas. La función `date()` lo mismo que un objeto `POSIXct` en forma de cadena de caracteres.
+
+  También es posible extraer por separado cada elemento de las fechas, modificar su presentación y realizar cálculos aritméticos.
+
+  Ahora veamos: qué clase de objeto tendrás si escribes en las consola `"2019-04-11 12:00 UTC"`:
+
+<choice>
+<opt text='clase Date'>
+
+Esta no es la opción correcta. La clase Date solo acepta fechas. No incluye ni tiempo ni zona horaria.
+
+</opt>
+
+<opt text='clase POSIXct'>
+
+Incorrecto. Aunque el formato corresponde a esta clase, hace falta algo muy importante.
+
+</opt>
+
+<opt text='clase double'>
+
+Incorrecto. La **clase** doble solamente se observa con números. Las clases `Date` y `POSIXct` son de **tipo** doble.
+
+</opt>
+
+<opt text='clase character' correct="true">
+
+¡Correcto!. Las fechas se tienen que definir explícitamente, de lo contrario solo son cadenas de caracteres.
+
+</opt>
+
+</choice>
+ 
 </exercise>
 
 <exercise id="10" title="Operadores lógicos">
