@@ -242,36 +242,300 @@ Incorrecto. Esta opción solo te regresará valores faltantes porque los valores
  
 </exercise>
 
-<exercise id="9" title="Fechas">
-  <codeblock id="">
-  </codeblock>
+<exercise id="9" title="Fecha y hora">
+
+  Aunque en todo momento usamos fechas y horas, trabajar con ellas puede ser sorprendentemente complicado y normalmente querrás trabajar con paquetes como `lubridate`. Primero empecemos desde la convención para escribir fechas. 
+  
+  Seguramente habrás notado que existen formas muy distintas de expresar una fecha. En Estados Unidos se suele poner **Mes día, año**, mientras que en América Latina y gran parte del mundo se escribe **día-mes-año**. Es más, algunas veces encuentras fechas con nombres completos, otros con números y otros con abreviaturas. En datos de la vida real este desorden puede encontrarse hasta en un solo archivo. Afortunadamente, la norma [https://es.wikipedia.org/wiki/ISO_8601](ISO 8601) se estableció para evitar este tipo de problemas. La lógica es que la notación identifique los elementos de mayor a menor: `[AAAA]-[MM]-[DD]` para fechas, `hh:mm:ss.ssss` para tiempo y `Z` para la zona horaria. Esta es la norma que los lenguajes de programación utilizan, por lo que las fechas y el tiempo tendrán este formato.
+
+  Ahora, para vectores que contienen solo fechas existe la clase `Date`. Esta clase está construida sobre datos dobles, es decir, de tipo `double`. Además, de la misma forma que los factores, hay que crearlos explícitamente.
+
+  Por ejemplo:
+  ```r
+  > Sys.Date()
+  [1] "2019-06-08"
+  > class(Sys.Date())
+  [1] "Date"
+  > typeof(Sys.Date())
+  [1] "double"
+  ```
+  En este caso, la función `Sys.Date()` extrae la fecha del sistema en forma de `double` y lo convierte en clase `Date`.
+
+  Por otra parte, para fechas y tiempo existe una clase especial que se llama `POSIXct`. La primera parte, `POSIX`, es el acrónimo de _Interfaz de Sistemas Operativos Portátil_ en inglés (si te parece que es un nombre rarísimo, bienvenido al mundo de la programación). El sufijo `ct` corresponde al _tiempo de calendario_ en inglés. Al igual que los objetos `Date`, este está construido sobre dobles cuyos valores corresponden a los segundos transcurridos desde el primero de enero de 1970. Esto significa que todas las fechas anterior a 1970 tendrán un `double` negativo.
+
+  También existe la clase `POSIXlt`, cuyo sufijo `lt` corresponde a _tiempo local_ en inglés, pero es un poco más complicado de usar y no necesitamos ver eso por ahora. Por lo pronto veamos cómo se construye un objeto `POSIXct` y comprobemos su clase y tipo:
+
+  ```r
+  > ahora <- Sys.time()
+  > ahora
+  [1] "2019-06-08 12:01:54 CDT"
+
+  > class(ahora)
+  [1] "POSIXct" "POSIXt" 
+
+  > typeof(ahora)
+  [1] "double"
+
+  > unclass(ahora)
+  [1] 1560013315
+  ```
+  La función `unclass()` muestra el número `double` que le corresponde al objeto `ahora`. Lo que significa que han pasado más de mil millones de segundos desde 1970.
+
+  Nota que existen otras formas de presentar fechas. La función `date()` lo mismo que un objeto `POSIXct` en forma de cadena de caracteres.
+
+  También es posible extraer por separado cada elemento de las fechas, modificar su presentación y realizar cálculos aritméticos.
+
+  Ahora veamos: qué clase de objeto tendrás si escribes en las consola `"2019-04-11 12:00 UTC"`:
+
+<choice>
+<opt text='clase Date'>
+
+Esta no es la opción correcta. La clase Date solo acepta fechas. No incluye ni tiempo ni zona horaria.
+
+</opt>
+
+<opt text='clase POSIXct'>
+
+Incorrecto. Aunque el formato corresponde a esta clase, hace falta algo muy importante.
+
+</opt>
+
+<opt text='clase double'>
+
+Incorrecto. La **clase** doble solamente se observa con números. Las clases `Date` y `POSIXct` son de **tipo** doble.
+
+</opt>
+
+<opt text='clase character' correct="true">
+
+¡Correcto!. Las fechas se tienen que definir explícitamente, de lo contrario solo son cadenas de caracteres.
+
+</opt>
+
+</choice>
+ 
 </exercise>
 
 <exercise id="10" title="Operadores lógicos">
-  <codeblock id="">
+
+Comparar datos es esencial para cualquier análisis y trabajo de datos. Por lo tanto, en R podemos hacer comparaciones con operadores sencillos:
+
+```r
+# Operadores de relación
+<   Mayor que
+>   Menor que
+<=  Menor o igual que
+>=  Mayor o igual que
+==  Igual a
+!=  Diferente a
+```
+
+Cualquier operación que hagas con un operador lógico resultará en un objeto de clase `logical`, es decir, será `TRUE`o `FALSE`.
+
+¿Recuerdas a nuestros amigos que pidieron tacos?
+Veamos si Mario pidió más tacos que tú
+
+```r
+# Tacos pedidos
+> Mario <- 4
+> tu <- 4
+
+# ¿Mario pidió más tacos que tú?
+> Mario > tu
+[1] FALSE
+```
+
+También podemos utilizar estos operadores para comparar si se trata del mismo objeto:
+```r
+> class(date()) == class("tacos")
+[1] TRUE
+```
+
+De esta forma, los operadores lógicos se vuelven una herramienta indispensable en el flujo de trabajo. Nota que el operador de igualdad es `==` y no `=`, porque este último operador está reservado para asignaciones. Es un error bastante común poner `=` en lugar de `==` al hacer comparaciones, así que ¡ten mucho cuidado!
+
+También contamos con los operadores booleanos. El operador **conjuntivo** `&` (y) que resulta verdadero solo si todas las partes son verdaderas y el operador **disyuntivo** `|` (o) en donde resulta falso si todas las partes son falsas. Estos operadores van a evaluar cada elemento del vector, por lo que si comparamos dos vectores con 3 elementos, R imprimirá tres resultados. Por otra parte, existen las versiones `&&` y `||` que solo evalúan sobre el primer elemento del vector.
+
+```r
+# Operadores booleanos para cada elemento
+&   Conjuntivo Y para agregar
+|   Disyuntivo O para presentar alternativas
+
+# Operadores booleanos para evaluar solo el primer elemento
+&&  Conjuntivos Y para agregar
+||  Disyuntivos O para presentar alternativas
+```
+
+Veamos los siguientes ejemplos para ver cómo funciona:
+```r
+> c(TRUE, FALSE, FALSE) & c(TRUE, FALSE, TRUE)
+[1]  TRUE FALSE FALSE
+
+> c(TRUE, FALSE, FALSE) && c(TRUE, FALSE, TRUE)
+[1] TRUE
+
+> c(TRUE, FALSE, FALSE) | c(TRUE, FALSE, TRUE)
+[1]  TRUE FALSE  TRUE
+
+> c(TRUE, FALSE, FALSE) || c(TRUE, FALSE, TRUE)
+[1] TRUE
+```
+Al trabajar con datos, normalmente utilizaremos `&` y `|`, pero al final la lógica de nuestro análisis nos indicará con qué operadores podemos trabajar mejor.
+
+Finalmente, está el operador de negación `!` (no es). Este operador suele utilizarse mucho en casos donde queremos eliminar valores faltantes, aunque su aplicación es tan variada como tu análisis lo desee.
+
+```r
+# Operador de negación
+!   No es
+```
+
+Su función es mostrar el contrario del `logical` que se le presente, como lo vemos de la siguiente manera:
+```r
+> !TRUE
+[1] FALSE
+> !FALSE
+[1] TRUE
+```
+
+Todos los operadores anteriores se pueden juntar en una línea para extraer información relevante. Por ejemplo, digamos que tenemos el vector `c(1, 10, 100, 1000)` y queremos saber si sus elementos se encuentran __entre__ 50 y 200. Para ello tendremos que combinar `&` con `>=` y `<` de la siguiente forma:
+```r
+> cien <- 100
+>
+> cien >= 50 & cien <= 200
+[1] TRUE
+```
+La forma en que R es la siguiente: primero comienza por los operadores de relación `>=` y `<=`. Luego, utiliza `&` para evaluar los resultados de estos. Es decir, primero ve que  tanto `100 >= 50` como `100 <= 200` son verdaderos y como `TRUE & TRUE` resulta en verdadero, el resultado final es `TRUE`. Por esta razón escribimos dos veces `cien`.
+ 
+Fácil, ¿no? Hora de exprimir el cerebro con lógica:
+
+  <codeblock id="01_10">
+
+  1. Recuerda que estrictamente algo mayo que algo es `>``
+  2. Hay que evaluar dos veces. Una con menor que y la otra mayor o igual que.
+
   </codeblock>
 </exercise>
 
 <exercise id="11" title="Valores faltantes">
 
+Una de las cosas que más consume tiempo en el análisis de datos es lidiar con valores faltantes. Existen tres objetos que denotan valores faltantes, pero cuya naturaleza es distinta. Estos son: `NA`, `NaN` y `NULL`.
 
+Primero, hablemos de `NA`. Tuvimos nuestro primer acercamiento en la lección de factores. Corresponde a _No Disponible_ en inglés. Esta constante, de clase y tipo `logical`, es la que denota por excelencia los valores faltantes en R. En otras palabras, es un elemento que indica la falta de elementos. 
 
-  <codeblock id="">
+Cuando veamos cómo exportar datos, veremos que convertiremos a `NA` los valores en blanco, `.`, `NaN` o todos aquellos que podamos señalarle a R. 
 
+Si bien le llamamos _dato faltante_, es necesario aclarar que su tratamiento depende mucho del tipo de análisis que se quiera hacer. En ocasiones querremos eliminar filas enteras que presenten al menos un `NA`. En otras, son un indicador de calidad de la información. De la misma forma que sucede con la cadena de caracteres, trabajar con `NA` puede que amerite un curso entero.
 
+Hay un detalle muy particular de `NA`. Es una constante infecciosa. Cualquier operación que hagas resulta en un `NA` (salvo tres excepciones: `NA ^ 0`, `NA | TRUE` y `NA & FALSE`). Esto significa que la presencia de un `NA` en un vector termina propagando ese resultado. Consideremos el escenario donde se nos olvidó cuántos tacos ordenó uno de nuestros amigos, así que lo registramos como `NA`. Queremos saber cuál de estos es un NA:
 
-  </codeblock>
+```r
+> orden <- c(2, NA, 3, 4, 4)
+> orden == NA
+[1] NA NA NA NA NA
+```
+
+Aquí vemos que todos son `NA`, lo cual no es necesariamente incorrecto. Un valor faltante no es ni mayor, ni menor ni igual que otro valor, por lo R lo interpreta como `NA`. Para solucionar esto, existe la función `is.na()` en la que aprovecha la clase de `logical` de `NA` para determinar si es un valor faltante.
+
+```r
+> is.na(orden)
+[1] FALSE  TRUE FALSE FALSE FALSE
+```
+
+La otra constante es `NaN`, de clase `numeric` y tipo `double`. Pertenece al mismo dominio que los numéricos `Inf` y `-Inf`.
+
+El tercer elemento es `NULL`. Hasta ahora, todos los elementos que hemos descrito tiene un atributo llamado _longitud_ o `length`. Todos los objetos tienen longitud mínima de **1**; excepto `NULL`, que tiene longitud cero. La forma más fácil de entender su naturaleza es que mientras `NA` se usa para datos, `NULL` se usa para atributos e identidades internas de R. 
+
+¿Recuerdas el ejercicio de la sección de **operadores lógicos**, donde pusimos los nombres de nuestros amigos mediante la función `names()`? Para eliminarlo hacemos lo siguiente:
+
+```r
+> orden_por_persona
+ Lorena    Raúl Mariana   Mario      Tú 
+      2       2       3       4       4 
+>
+> names(orden_por_persona) <- NULL
+> orden_por_persona
+[1] 2 2 3 4 4
+```
+De la misma forma, en base R también se hace para eliminar columnas o filas.
+
+Si te diste cuenta, no hemos dicho a qué clase y tipo pertenece `NULL`. ¿podrías adivinar cuáles son?
+
+<choice>
+<opt text='clase y tipo NULL' correct="true">
+
+¡En efecto! Como NULL es la ausencia de elementos internos, R lo clasifica como su propia clase y tipo. Incluso algunos lo consideran como el quinto vector atómico.
+
+</opt>
+
+<opt text='clase numeric, tipo double'>
+
+Incorrecto. En todo caso eso correspondería a `NaN`.
+
+</opt>
+
+<opt text='clase y tipo logical'>
+
+No. Esto describe a `NA`.
+
+</opt>
+
+<opt text='clase integer y tipo character'>
+
+Esto ni siquiera tiene sentido.
+
+</opt>
+</choice>
 </exercise>
 
 <exercise id="12" title="Coerciones">
 
+En todo este capítulo hemos utilizado `class()` y `tipeof()` para conocer la identidad de los objetos. Pero, ¿qué tal si queremos conocer específicamente si el objeto se trata de un entero, doble o cadena? Para eso existe la familia de funciones `is`. Sin embargo, solo las que llevan el nombre de vectores atómicos evalúan lo que uno esperaría (`is.character`, `is.numeric`, `is.integer` y `is.logical`). En cuanto a los demás, la recomendación es que solo los uses si sabes lo que haces. Cada una de estas funciones da como resultado un lógico. Digamos que tenemos un vector que contiene `"42"`, y queremos saber si se trata de un entero. Lo pondríamos de la siguiente forma:
 
+```r
+> is.integer("42")
+[1] FALSE
+```
 
-  <codeblock id="">
+Esto es así porque está entre comillas y por lo tanto se trata de una cadena de caracteres.
 
+Por otro lado, hemos visto cómo crear objetos, pero no cómo transformarlos. El ejemplo más sencillo es cuando `TRUE` puede ser leído como `1` en operaciones aritméticas. A esto se le llama **coerción** o **forzar** elementos. Esto sucede al combinar diferentes tipos de vectores atómicos en un solo vector. Sin órdenes explícitas, R realizará transformaciones conforme a el siguiente orden de menor a mayor: `logical < integer < double < character`. Esta lógica se sigue en todas las operaciones matemáticas.
 
+También existe una forma de forzar una clase de vector a otro mediante la familia de funciones `as`. De la misma forma que `is`, los nombres que servirán son los mismos que los vectores atómicos. Siguiendo el mismo ejemplo anterior, para convertir `"42"` tendríamos que escribir así:
 
-  </codeblock>
+```r
+> as.integer("42")
+[1] 42
+```
+
+Por supuesto, existe una advertencia. Cuando la función `as` no pueda realizar la conversión, registrará el resultado como `NA` y mandará un mensaje de advertencia:
+
+```r
+> as.double("Z")
+[1] NA
+Warning message:
+NAs introduced by coercion 
+```
+Ahora veamos, ¿qué pasa si tratamos de aplicar la función `is.double(NULL)`?
+
+<choice>
+<opt text='lo convierte a 0'>
+
+Error. `NULL` tiene su propia clase y no se puede forzar a entero.
+
+</opt>
+
+<opt text='se convierte en FALSO'>
+
+Incorrecto. Es cierto que se convierte en lógico, pero no es FALSO.
+
+</opt>
+
+<opt text='Se convierte en NA' correct="true">
+
+¡Correcto! Como la función no puede resolver entre verdadero o falso, R lo soluciona seleccionando la tercera opción lógica: `NA`.
+
+</opt>
+</choice>
+
 </exercise>
 
 <exercise id="13" title="Nombres reservados">
