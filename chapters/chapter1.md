@@ -317,7 +317,101 @@ Incorrecto. La **clase** doble solamente se observa con números. Las clases `Da
 </exercise>
 
 <exercise id="10" title="Operadores lógicos">
-  <codeblock id="">
+
+Comparar datos es esencial para cualquier análisis y trabajo de datos. Por lo tanto, en R podemos hacer comparaciones con operadores sencillos:
+
+```r
+# Operadores de relación
+<   Mayor que
+>   Menor que
+<=  Menor o igual que
+>=  Mayor o igual que
+==  Igual a
+!=  Diferente a
+```
+
+Cualquier operación que hagas con un operador lógico resultará en un objeto de clase `logical`, es decir, será `TRUE`o `FALSE`.
+
+¿Recuerdas a nuestros amigos que pidieron tacos?
+Veamos si Mario pidió más tacos que tú
+
+```r
+# Tacos pedidos
+> Mario <- 4
+> tu <- 4
+
+# ¿Mario pidió más tacos que tú?
+> Mario > tu
+[1] FALSE
+```
+
+También podemos utilizar estos operadores para comparar si se trata del mismo objeto:
+```r
+> class(date()) == class("tacos")
+[1] TRUE
+```
+
+De esta forma, los operadores lógicos se vuelven una herramienta indispensable en el flujo de trabajo. Nota que el operador de igualdad es `==` y no `=`, porque este último operador está reservado para asignaciones. Es un error bastante común poner `=` en lugar de `==` al hacer comparaciones, así que ¡ten mucho cuidado!
+
+También contamos con los operadores booleanos. El operador **conjuntivo** `&` (y) que resulta verdadero solo si todas las partes son verdaderas y el operador **disyuntivo** `|` (o) en donde resulta falso si todas las partes son falsas. Estos operadores van a evaluar cada elemento del vector, por lo que si comparamos dos vectores con 3 elementos, R imprimirá tres resultados. Por otra parte, existen las versiones `&&` y `||` que solo evalúan sobre el primer elemento del vector.
+
+```r
+# Operadores booleanos para cada elemento
+&   Conjuntivo Y para agregar
+|   Disyuntivo O para presentar alternativas
+
+# Operadores booleanos para evaluar solo el primer elemento
+&&  Conjuntivos Y para agregar
+||  Disyuntivos O para presentar alternativas
+```
+
+Veamos los siguientes ejemplos para ver cómo funciona:
+```r
+> c(TRUE, FALSE, FALSE) & c(TRUE, FALSE, TRUE)
+[1]  TRUE FALSE FALSE
+
+> c(TRUE, FALSE, FALSE) && c(TRUE, FALSE, TRUE)
+[1] TRUE
+
+> c(TRUE, FALSE, FALSE) | c(TRUE, FALSE, TRUE)
+[1]  TRUE FALSE  TRUE
+
+> c(TRUE, FALSE, FALSE) || c(TRUE, FALSE, TRUE)
+[1] TRUE
+```
+Al trabajar con datos, normalmente utilizaremos `&` y `|`, pero al final la lógica de nuestro análisis nos indicará con qué operadores podemos trabajar mejor.
+
+Finalmente, está el operador de negación `!` (no es). Este operador suele utilizarse mucho en casos donde queremos eliminar valores faltantes, aunque su aplicación es tan variada como tu análisis lo desee.
+
+```r
+# Operador de negación
+!   No es
+```
+
+Su función es mostrar el contrario del `logical` que se le presente, como lo vemos de la siguiente manera:
+```r
+> !TRUE
+[1] FALSE
+> !FALSE
+[1] TRUE
+```
+
+Todos los operadores anteriores se pueden juntar en una línea para extraer información relevante. Por ejemplo, digamos que tenemos el vector `c(1, 10, 100, 1000)` y queremos saber si sus elementos se encuentran __entre__ 50 y 200. Para ello tendremos que combinar `&` con `>=` y `<` de la siguiente forma:
+```r
+> cien <- 100
+>
+> cien >= 50 & cien <= 200
+[1] TRUE
+```
+La forma en que R es la siguiente: primero comienza por los operadores de relación `>=` y `<=`. Luego, utiliza `&` para evaluar los resultados de estos. Es decir, primero ve que  tanto `100 >= 50` como `100 <= 200` son verdaderos y como `TRUE & TRUE` resulta en verdadero, el resultado final es `TRUE`. Por esta razón escribimos dos veces `cien`.
+ 
+Fácil, ¿no? Hora de exprimir el cerebro con lógica:
+
+  <codeblock id="01_10">
+
+  1. Recuerda que estrictamente algo mayo que algo es `>``
+  2. Hay que evaluar dos veces. Una con menor que y la otra mayor o igual que.
+
   </codeblock>
 </exercise>
 
