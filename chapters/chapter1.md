@@ -417,13 +417,73 @@ Fácil, ¿no? Hora de exprimir el cerebro con lógica:
 
 <exercise id="11" title="Valores faltantes">
 
+Una de las cosas que más consume tiempo en el análisis de datos es lidiar con valores faltantes. Existen tres objetos que denotan valores faltantes, pero cuya naturaleza es distinta. Estos son: `NA`, `NaN` y `NULL`.
 
+Primero, hablemos de `NA`. Tuvimos nuestro primer acercamiento en la lección de factores. Corresponde a _No Disponible_ en inglés. Esta constante, de clase y tipo `logical`, es la que denota por excelencia los valores faltantes en R. En otras palabras, es un elemento que indica la falta de elementos. 
 
-  <codeblock id="">
+Cuando veamos cómo exportar datos, veremos que convertiremos a `NA` los valores en blanco, `.`, `NaN` o todos aquellos que podamos señalarle a R. 
 
+Si bien le llamamos _dato faltante_, es necesario aclarar que su tratamiento depende mucho del tipo de análisis que se quiera hacer. En ocasiones querremos eliminar filas enteras que presenten al menos un `NA`. En otras, son un indicador de calidad de la información. De la misma forma que sucede con la cadena de caracteres, trabajar con `NA` puede que amerite un curso entero.
 
+Hay un detalle muy particular de `NA`. Es una constante infecciosa. Cualquier operación que hagas resulta en un `NA` (salvo tres excepciones: `NA ^ 0`, `NA | TRUE` y `NA & FALSE`). Esto significa que la presencia de un `NA` en un vector termina propagando ese resultado. Consideremos el escenario donde se nos olvidó cuántos tacos ordenó uno de nuestros amigos, así que lo registramos como `NA`. Queremos saber cuál de estos es un NA:
 
-  </codeblock>
+```r
+> orden <- c(2, NA, 3, 4, 4)
+> orden == NA
+[1] NA NA NA NA NA
+```
+
+Aquí vemos que todos son `NA`, lo cual no es necesariamente incorrecto. Un valor faltante no es ni mayor, ni menor ni igual que otro valor, por lo R lo interpreta como `NA`. Para solucionar esto, existe la función `is.na()` en la que aprovecha la clase de `logical` de `NA` para determinar si es un valor faltante.
+
+```r
+> is.na(orden)
+[1] FALSE  TRUE FALSE FALSE FALSE
+```
+
+La otra constante es `NaN`, de clase `numeric` y tipo `double`. Pertenece al mismo dominio que los numéricos `Inf` y `-Inf`.
+
+El tercer elemento es `NULL`. Hasta ahora, todos los elementos que hemos descrito tiene un atributo llamado _longitud_ o `length`. Todos los objetos tienen longitud mínima de **1**; excepto `NULL`, que tiene longitud cero. La forma más fácil de entender su naturaleza es que mientras `NA` se usa para datos, `NULL` se usa para atributos e identidades internas de R. 
+
+¿Recuerdas el ejercicio de la sección de **operadores lógicos**, donde pusimos los nombres de nuestros amigos mediante la función `names()`? Para eliminarlo hacemos lo siguiente:
+
+```r
+> orden_por_persona
+ Lorena    Raúl Mariana   Mario      Tú 
+      2       2       3       4       4 
+>
+> names(orden_por_persona) <- NULL
+> orden_por_persona
+[1] 2 2 3 4 4
+```
+De la misma forma, en base R también se hace para eliminar columnas o filas.
+
+Si te diste cuenta, no hemos dicho a qué clase y tipo pertenece `NULL`. ¿podrías adivinar cuáles son?
+
+<choice>
+<opt text='clase y tipo NULL correct="true">
+
+¡En efecto! Como NULL es la ausencia de elementos internos, R lo clasifica como su propia clase y tipo. Incluso algunos lo consideran como el quinto vector atómico.
+
+</opt>
+
+<opt text='clase numeric, tipo double'>
+
+Incorrecto. En todo caso eso correspondería a `NaN`.
+
+</opt>
+
+<opt text='clase y tipo logical'>
+
+No. Esto describe a `NA`.
+
+</opt>
+
+<opt text='clase integer y tipo character'>
+
+Esto ni siquiera tiene sentido.
+
+</opt>
+</choice>
 </exercise>
 
 <exercise id="12" title="Coerciones">
