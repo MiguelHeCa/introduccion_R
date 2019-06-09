@@ -460,7 +460,7 @@ De la misma forma, en base R también se hace para eliminar columnas o filas.
 Si te diste cuenta, no hemos dicho a qué clase y tipo pertenece `NULL`. ¿podrías adivinar cuáles son?
 
 <choice>
-<opt text='clase y tipo NULL correct="true">
+<opt text='clase y tipo NULL' correct="true">
 
 ¡En efecto! Como NULL es la ausencia de elementos internos, R lo clasifica como su propia clase y tipo. Incluso algunos lo consideran como el quinto vector atómico.
 
@@ -488,13 +488,54 @@ Esto ni siquiera tiene sentido.
 
 <exercise id="12" title="Coerciones">
 
+En todo este capítulo hemos utilizado `class()` y `tipeof()` para conocer la identidad de los objetos. Pero, ¿qué tal si queremos conocer específicamente si el objeto se trata de un entero, doble o cadena? Para eso existe la familia de funciones `is`. Sin embargo, solo las que llevan el nombre de vectores atómicos evalúan lo que uno esperaría (`is.character`, `is.numeric`, `is.integer` y `is.logical`). En cuanto a los demás, la recomendación es que solo los uses si sabes lo que haces. Cada una de estas funciones da como resultado un lógico. Digamos que tenemos un vector que contiene `"42"`, y queremos saber si se trata de un entero. Lo pondríamos de la siguiente forma:
 
+```r
+> is.integer("42")
+[1] FALSE
+```
 
-  <codeblock id="">
+Esto es así porque está entre comillas y por lo tanto se trata de una cadena de caracteres.
 
+Por otro lado, hemos visto cómo crear objetos, pero no cómo transformarlos. El ejemplo más sencillo es cuando `TRUE` puede ser leído como `1` en operaciones aritméticas. A esto se le llama **coerción** o **forzar** elementos. Esto sucede al combinar diferentes tipos de vectores atómicos en un solo vector. Sin órdenes explícitas, R realizará transformaciones conforme a el siguiente orden de menor a mayor: `logical < integer < double < character`. Esta lógica se sigue en todas las operaciones matemáticas.
 
+También existe una forma de forzar una clase de vector a otro mediante la familia de funciones `as`. De la misma forma que `is`, los nombres que servirán son los mismos que los vectores atómicos. Siguiendo el mismo ejemplo anterior, para convertir `"42"` tendríamos que escribir así:
 
-  </codeblock>
+```r
+> as.integer("42")
+[1] 42
+```
+
+Por supuesto, existe una advertencia. Cuando la función `as` no pueda realizar la conversión, registrará el resultado como `NA` y mandará un mensaje de advertencia:
+
+```r
+> as.double("Z")
+[1] NA
+Warning message:
+NAs introduced by coercion 
+```
+Ahora veamos, ¿qué pasa si tratamos de aplicar la función `is.double(NULL)`?
+
+<choice>
+<opt text='lo convierte a 0'>
+
+Error. `NULL` tiene su propia clase y no se puede forzar a entero.
+
+</opt>
+
+<opt text='se convierte en FALSO'>
+
+Incorrecto. Es cierto que se convierte en lógico, pero no es FALSO.
+
+</opt>
+
+<opt text='Se convierte en NA' correct="true">
+
+¡Correcto! Como la función no puede resolver entre verdadero o falso, R lo soluciona seleccionando la tercera opción lógica: `NA`.
+
+</opt>
+</choice>
+
 </exercise>
 
 <exercise id="13" title="Nombres reservados">
