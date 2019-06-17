@@ -36,7 +36,7 @@ id: 2
   </codeblock>
 </exercise>
 
-<exercise id="4" title="Data frames">
+<exercise id="4" title="Arrays">
 
 
 
@@ -47,7 +47,7 @@ id: 2
   </codeblock>
 </exercise>
 
-<exercise id="5" title="Listas">
+<exercise id="5" title="Data frames">
 
 
 
@@ -58,7 +58,18 @@ id: 2
   </codeblock>
 </exercise>
 
-<exercise id="6" title="">
+<exercise id="6" title="Listas">
+
+
+
+  <codeblock id="02_06">
+
+
+
+  </codeblock>
+</exercise>
+
+<exercise id="7" title="">
 
   <slides source=""></slides>
 
