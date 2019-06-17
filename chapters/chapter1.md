@@ -10,7 +10,7 @@ id: 1
 
 <exercise id="1" title="Introducción" type="slides">
 
-  <slides source="pres1_01"></slides>
+  <slides source="diap1_01"></slides>
 
 </exercise>
 
@@ -564,6 +564,6 @@ Incorrecto. Es cierto que se convierte en lógico, pero no es FALSO.
 
 <exercise id="14" title="Recomendaciones" type="slides">
 
-  <slides source="pres1_14"></slides>
+  <slides source="diap1_14"></slides>
 
 </exercise>

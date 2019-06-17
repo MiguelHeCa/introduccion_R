@@ -10,7 +10,7 @@ id: 2
 
 <exercise id="1" title="Estructura de datos">
 
-  <slides source=""></slides>
+  <slides source="diap2_01"></slides>
 
 </exercise>
 
