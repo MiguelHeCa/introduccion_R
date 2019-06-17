@@ -14,7 +14,7 @@ id: 3
 
 </exercise>
 
-<exercise id="2" title="If else">
+<exercise id="2" title="Bucle For">
 
 
 
@@ -25,7 +25,7 @@ id: 3
   </codeblock>
 </exercise>
 
-<exercise id="3" title="For">
+<exercise id="3" title="Bucle If else">
 
 
 
@@ -36,7 +36,7 @@ id: 3
   </codeblock>
 </exercise>
 
-<exercise id="4" title="While">
+<exercise id="4" title="Bucle While">
 
 
 
