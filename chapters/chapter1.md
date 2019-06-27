@@ -488,7 +488,7 @@ Esto ni siquiera tiene sentido.
 
 <exercise id="12" title="Coerciones">
 
-En todo este capítulo hemos utilizado `class()` y `tipeof()` para conocer la identidad de los objetos. Pero, ¿qué tal si queremos conocer específicamente si el objeto se trata de un entero, doble o cadena? Para eso existe la familia de funciones `is`. Sin embargo, solo las que llevan el nombre de vectores atómicos evalúan lo que uno esperaría (`is.character`, `is.numeric`, `is.integer` y `is.logical`). En cuanto a los demás, la recomendación es que solo los uses si sabes lo que haces. Cada una de estas funciones da como resultado un lógico. Digamos que tenemos un vector que contiene `"42"`, y queremos saber si se trata de un entero. Lo pondríamos de la siguiente forma:
+En todo este capítulo hemos utilizado `class()` y `tipeof()` para conocer la identidad de los objetos. Pero, ¿qué tal si queremos conocer específicamente si el objeto se trata de un entero, doble o cadena? Para eso existe la familia de funciones `is`. Sin embargo, solo las que llevan el nombre de vectores atómicos evalúan lo que uno esperaría (`is.character`, `is.numeric`, `is.integer` y `is.logical`). En cuanto a las demás funciones de esa familia, sabrás bajo qué contextos utilizarlas entre más te familiarices con R. Cada una de estas funciones da como resultado un lógico. Digamos que tenemos un vector que contiene `"42"`, y queremos saber si se trata de un entero. Lo pondríamos de la siguiente forma:
 
 ```r
 > is.integer("42")
